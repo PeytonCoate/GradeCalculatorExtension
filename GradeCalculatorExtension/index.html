@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Grades Made Easy</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+    <script src="GradeCalculation.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+    <!--NavBar-->  
+    <nav>
+        <label for="sidebar-active" class="open-sidebar-button"> 
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+        
+        <div class="links-container"> 
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+            <a href="#">Home</a>
+            <a href="tutorial.html">Tutorial</a>
+        </div>
+    </nav>
+
+    <h1>Canvas Grades - Made Easy</h1>
+    <hr>
+    <h2>How Do I Use Canvas Grades?</h2>
+    <p>
+        Using Canvas Grades is easy, simply choose your desired grade from among the buttons, paste in your grades page from canvas below,  and then submit!
+    </p>
+
+    <!--main--> 
+    <div class="wrap-box">
+        <br>
+        <label>Select Desired Course Grade:</label></br>
+        <button onClick="setGradeGoal('A')" id="A">A (90%-100%)</button>
+        <button onClick="setGradeGoal('B')" id="B">B (80%-89%)</button>
+        <button onClick="setGradeGoal('C')" id="C">C (70%-79%)</button>
+        <button onClick="setGradeGoal('D')" id="D">D (60%-69%)</button>
+        <div id="entryArea" style="display:none">
+            <label for="entry">Enter Grades: </label><br/>
+            <textarea id="entry" name="entry" placeholder="Click 'Paste' to Paste Course Information Here" rows="20" cols="50" readonly></textarea>
+            <button onClick="paste()">Paste</button>
+            <button onClick="submit()">Submit</button>
+            <input type="hidden" id="errorBox" color="" readonly></input>
+        </div>
+        <br>
+        <div id="calcArea" style="display:none">
+            <select id="calcSelect">
+            </select>
+            <button onclick="calculate()" id="Calculate">Calculate</button></br>
+            <label for="grade-needed">Grade Needed: </label>
+            <input id="grade-needed" type="text" readonly>
+        </div>
+            <button onclick="reset()">Reset</button>
+        <br>
+    </div>
+    <h1>Homework Calendar</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Assignment</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body">
+            <!-- javaScript -->
+        </tbody>
+    </table>
+</body>
+</html>
